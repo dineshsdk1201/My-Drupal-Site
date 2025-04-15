@@ -1,0 +1,17 @@
+name: 'myTheme'
+type: theme
+description: 'A custom theme for learning'
+core_version_requirement: ^10
+base theme: olivero
+libraries:
+  - myTheme/global-styling
+regions:
+  header: 'Header'
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  content: 'Content'
+  footer: 'Footer'
+  sidebar_first: 'Sidebar First'
+  sidebar_second: 'Sidebar Second'
+
+php: 8.2

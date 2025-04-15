@@ -1,0 +1,12 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+      css/sidebar.css: {}
+      css/content.css: {}
+      css/mainnav.css: {}
+      css/footer.css: {}
+      css/footermenu.css: {}
+      css/breadcrumb.css: {}
+  # js:
+  #   js/script.js: {}

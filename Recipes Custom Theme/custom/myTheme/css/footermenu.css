@@ -1,0 +1,20 @@
+ul.menu.menu--level-1{
+    display: flex;
+    gap:20px;
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: none;
+    margin-top: 20px;
+}
+ul.menu.menu--level-1 li a{
+    text-decoration: none;
+    list-style-type:none !important;
+    list-style: none;
+
+}
+ul.menu.menu--level-1 li a:hover{
+    color: #2272a0;
+}
+.menu__link.menu__link--nolink.menu__link--level-1{
+    color: #1475ad;
+}

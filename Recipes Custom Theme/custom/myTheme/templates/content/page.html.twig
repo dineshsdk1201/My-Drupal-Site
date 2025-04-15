@@ -1,0 +1,45 @@
+<div class="page">
+<header>
+<h1 class="site-title">{{ "Welcomes You" }}</h1>
+
+  {{ page.primary_menu }}
+  {{ page.secondary_menu }}
+  <h5>{{custom_message}}</h5>
+            
+</header>
+<main class="main-content">
+{{ page.content }}
+{#active_theme()#}
+{#active_theme_path()#}
+{%
+set My_classes=[
+  'myclass1',
+  'myclass2',
+  'myclass3',
+]
+%}
+
+{%
+set My_attributes=create_attribute({'id':['my_id']})
+%}
+{#
+<h4 {{create_attribute({'class':['demo','demo2']})}} >Hello Drupal</h4>
+<h2 {{My_attributes.addClass(My_classes)}}>Hello Drupal 2</h2>
+<h4 {{create_attribute({'id':['myiddd']})}}>Hello Again</h4>
+{{dump(path('entity.node.canonical',{"node":node.id()}))}}
+{{dump(url('entity.node.canonical',{"node":node.id()}))}}
+{{render_var({"#type":"textfield","#title":"Title"})}}
+{{render_var({"#type":"email","#title":"Email"})}}
+{{render_var({"#type":"submit","#title":"Submit"})}}
+#}
+
+</main>
+<div>
+{{page.sidebar_first}}
+</div>
+<footer class="myfooter">
+{{page.footer}}
+
+</footer>
+</div>
+

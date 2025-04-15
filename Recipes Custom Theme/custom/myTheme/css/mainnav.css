@@ -1,0 +1,53 @@
+.primary-nav__menu {
+    background-color: #2C2C2C; /* Black background */
+    display: flex;
+    justify-content: flex-start; /* Spaced-out menu items */
+    padding: 15px 0; /* Top and bottom padding */
+    border-bottom: 3px solid #0044cc; /* Optional: Blue underline for contrast */
+    gap: 40px;
+    padding-left: 30px;
+    font-weight: bolder;
+    list-style-type: none !important; /* Remove default bullet points */
+
+}
+ 
+.primary-nav__menu .menu__link {
+    color: #E6E6E6; /* Light grey text */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 15px; /* Spacing for clickable area */
+    font-size: 20px; /* Clear and readable text */
+}
+ 
+.primary-nav__menu .menu__link:hover {
+    color: #FFD700; /* Brighter text on hover */
+    
+}
+ 
+.primary-nav__menu .menu__item {
+    display: inline-block; /* Horizontal menu items */
+}
+
+ul{
+    margin-block-start: 0.25em;
+    margin-block-end: 0.25em;
+    margin-inline-start: 1em;
+    margin-inline-end: 1em;
+    padding-inline-start: 0;
+    list-style-type: disc;
+    list-style-image: none;
+}
+.primary-nav__menu li a{
+    text-decoration: none;
+}
+.primary-nav__menu li a:hover{
+    text-decoration: none;
+}
+
+.primary-nav__menu-item .primary-nav__menu-item--link .primary-nav__menu-item--level-1{
+    display:none;
+}
+.primary-nav__menu-item .primary-nav__menu-item--link .primary-nav__menu-item--level-1{
+display: block;
+}
