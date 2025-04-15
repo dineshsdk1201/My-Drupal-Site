@@ -1,0 +1,26 @@
+<?php
+
+use Drupal\node\Entity\NodeType;
+
+/**
+ * Implements hook_install().
+ */
+function custom_module_install() {
+  // Check if the content type already exists.
+  if (!NodeType::load('article_new')) {
+    // Create a new content type.
+    $node_type = NodeType::create([
+      'type' => 'article_new',
+      'name' => 'ArticleNew',
+    ]);
+    $node_type->save();
+
+    // Set default settings for the content type.
+    $node_type->set('description', 'A new content type for articles.');
+    $node_type->set('help', 'Use this content type to create new articles.');
+    $node_type->set('new_revision', TRUE);
+    $node_type->set('display_submitted', TRUE);
+    $node_type->save();
+  }
+}
+?>

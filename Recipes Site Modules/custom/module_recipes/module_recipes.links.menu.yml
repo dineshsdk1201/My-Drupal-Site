@@ -1,0 +1,39 @@
+module_recipes.aboutus:
+  title: 'About Us'
+  description: 'Menu for our mission.'
+  route_name: module_recipes.Aboutus
+  weight: 2
+  parent: main
+  menu_name: main
+  requirements:
+    _permission: 'access content'
+
+
+module_recipes.recipes:
+  title: 'Recipes Menu'
+  description: 'Menu for recipes content.'
+  route_name: module_recipes.RecipesList
+  weight: 3
+  parent: main
+  menu_name: main
+
+
+module_recipes.myrecipes:
+  title: 'Our Favourite Recipes'
+  description: 'Menu for our fav recipes.'
+  route_name: view.recipes_list.page_1
+  weight: 2
+  parent: main
+  menu_name: main
+  requirements:
+    _permission: 'access content'
+
+
+
+# module_recipes.showmessage:
+#   title: 'Message'
+#   description: 'Menu for showing message'
+#   route_name: module_recipes.show_message
+#   weight: 4
+#   parent: main
+#   menu_name: main

@@ -1,0 +1,94 @@
+<?php
+/**
+* Implements hook_theme().
+*/
+function module_recipes_theme($existing, $type, $theme, $path) {
+    return [
+        'about_theme' => [
+           'variables' => [
+              'details' => NULL, 
+              'demo' => '',
+              'values' => [],
+            ],
+            'template' => 'about-theme',
+        ],
+    ];
+}
+
+
+/**
+* Implements hook_form_alter().
+*/
+function module_recipes_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // Target the login form.
+  if ($form_id === 'user_login_form') {
+    // Add a custom message.
+    $form['#prefix'] = '<div class="custom-message">Welcome back! Please log in below.</div>';
+    
+    // Add a custom submit handler.
+    $form['actions']['submit']['#value'] = t('Custom Login');
+  }
+
+   // Target the article add form.
+  if ($form_id === 'node_article_form') {
+    // Add a custom message.
+    
+    
+    // Add a custom submit handler.
+    $form['actions']['submit']['#value'] = t('Save Article');
+  }
+
+  
+}
+
+
+
+/**
+ * Implements hook_cron().
+ */
+function module_recipes_cron() {
+    \Drupal::logger('my_cron_module')->notice('Cron job ran at: @time', ['@time' => date('Y-m-d H:i:s')]);
+}
+
+
+
+/**
+ * Implements hook_node_view_alter().
+ */
+function mymodule_node_view_alter(&$build, \Drupal\node\Entity\Node $node) {
+  // Log the node type for debugging purposes.
+  \Drupal::logger('myView')->notice($node->bundle());
+
+  // Check if the node type is 'article'.
+  if ($node->bundle() == 'article') {
+    // Add a custom message to the node's render array.
+    $build['custom_message'] = array(
+      '#markup' => '<p>Thank you for reading this article!</p>',
+      '#weight' => 100, // Ensure it appears at the end.
+    );
+  }
+}
+
+
+
+/**
+ * Implements hook_node_insert().
+ */
+function module_recipes_node_insert(\Drupal\node\Entity\Node $node) {
+  // Check if the node type is 'article'.
+  if ($node->getType() == 'article') {
+    // Perform actions when an article node is created.
+    \Drupal::logger('mymodule')->notice('A new article node has been created: @title', ['@title' => $node->getTitle()]);
+  }
+}
+
+
+function module_recipes_node_delete(\Drupal\node\Entity\Node $node) {
+  // Perform actions when a node is deleted.
+  if ($node->getType() === 'article') {
+    // Custom logic for article nodes.
+    \Drupal::logger('Deleteds')->notice('@node of title @name gets deleted', ['@node' => $node->getType(), '@name' => $node->getTitle()]);
+  }
+}
+
+?>

@@ -1,0 +1,11 @@
+recipes_styles:
+  version: 1.x
+  css:
+    theme:
+      css/recipes.css: {}
+
+about_us_styles:
+  version: 1.x
+  css:
+    theme:
+      css/about_us.css: {}

@@ -1,0 +1,21 @@
+.recipes-list {
+    list-style: none;
+    padding: 0;
+}
+ 
+.recipe-item {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-weight: bold;
+    color:rgb(231, 103, 206);
+}
+.note{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(83, 75, 193);
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: capitalize;
+}

@@ -1,0 +1,16 @@
+<div class="dynamic-block">
+<div class="left">
+  <h2 class="new-title">{{ title }}</h2>
+  <p class="desc">{{ description }}</p>
+  </div>
+  <div class="right">
+  {% if image_url %}
+<img src="{{ image_url }}" alt="{{ title }}" onerror="this.style.display='none';">
+  {% else %}
+    <p class="no-image">Image not available</p>
+  {% endif %}
+  </div>
+</div>
+
+
+ 

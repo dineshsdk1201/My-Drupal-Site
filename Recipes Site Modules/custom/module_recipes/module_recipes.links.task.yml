@@ -1,0 +1,4 @@
+module_recipes.content_type_link:
+  title: "Add Content Types"
+  route_name: "node.type_add"
+  base_route: "system.admin_content"

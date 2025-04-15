@@ -1,0 +1,9 @@
+<div>
+<p>{{data}}</p>
+{% if custom_message %}
+{{custom_message}}
+{% else %}
+{{attach_library('myblock/newblock-styling')}}
+<p {{attributes.addClass('tc')}}>{{"Demo Message"}}</p>
+{%endif%}
+</div>

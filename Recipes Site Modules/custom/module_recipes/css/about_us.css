@@ -1,0 +1,28 @@
+.text{
+    color:chocolate;
+}
+.details {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); /* Gradient Background */
+    border: 3px solid #ff6f61; /* Bold, eye-catching border */
+    border-radius: 12px; /* Rounded corners */
+    
+    color: #ffffff; /* White text for contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Soft text shadow for depth */
+    
+    font-size: 20px; /* Larger text size */
+    font-weight: 700; /* Bold text */
+    font-family: "Arial", sans-serif; /* Clean, professional font */
+    
+    padding: 20px; /* Spacious padding */
+    margin: 20px 0; /* Margin for spacing */
+    
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Elegant shadow effect */
+    
+    transition: transform 0.3s ease, background 0.3s ease; /* Smooth hover effect */
+}
+ 
+.details:hover {
+    transform: scale(1.03); /* Slight zoom effect on hover */
+    background: linear-gradient(135deg, #ff6f61 0%, #ff9a9e 100%); /* Different gradient on hover */
+    cursor: pointer; /* Pointer cursor for interactive feel */
+}
