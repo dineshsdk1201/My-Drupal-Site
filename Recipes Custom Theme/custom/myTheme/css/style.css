@@ -1,0 +1,42 @@
+html {
+    scroll-behavior: smooth;
+    background-color: antiquewhite;
+  }
+  .page{
+    background-color: antiquewhite;
+  }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: antiquewhite;
+    }
+    h1 {
+    color: #007acc;
+    }
+.site-title{
+    color:blueviolet;
+    text-align: center;
+}
+#block-mytheme-myblock{
+    border: 2px solid violet;
+    width: 40%;
+    padding: 5px;
+    margin: 10px;
+}
+.block__title{
+    color: blueviolet;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+
+}
+.block__content{
+    letter-spacing: 2px;
+    color:brown;
+    font-size: 17px;
+}
+.main-content{
+    background-color: antiquewhite;
+    margin: 10px;
+}
+

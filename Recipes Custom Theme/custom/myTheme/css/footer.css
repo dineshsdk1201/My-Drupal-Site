@@ -1,0 +1,19 @@
+.myfooter{
+    background-color: #2c2c2c;
+}
+.menu__link--link{
+    color: #1475ad;
+}
+.menu__link--link:hover{
+    color: #2272a0;
+}
+.block__title{
+    color: rgb(30, 222, 40);
+}
+ul.menu.menu--level-1{
+    list-style-type: none;
+}
+.cd{
+    color:white;
+    list-style-type: none;
+}

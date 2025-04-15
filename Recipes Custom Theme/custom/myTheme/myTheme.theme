@@ -1,0 +1,75 @@
+<?php
+
+/**
+* implements prepoocess function
+**/
+
+function myTheme_preprocess_page(array &$variables) {
+    \Drupal::logger('myTheme')->warning('Preprocess function triggered');
+    $variables['demo']="This is demo variable content";
+    
+}
+
+
+use Drupal\node\Entity\Node;
+ 
+/**
+* Implements hook_preprocess_block().
+*/
+function mytheme_preprocess_block(&$variables) {
+  // Check if this is the footer block.
+  \Drupal::logger("myFooter")->notice("My block id is".$variables['plugin_id']);
+  
+
+  if ($variables['plugin_id'] === 'system_menu_block:footer') {
+ \Drupal::logger("myFooter")->notice("Success");
+
+    // Check if the current page is a Basic Page (node type: page).
+    if (\Drupal::routeMatch()->getRouteName() === 'entity.node.canonical') {
+        
+      $node = \Drupal::routeMatch()->getParameter('node');
+      \Drupal::logger("My Demo")->notice($node->getType());
+      
+      if ($node instanceof Node && $node->bundle() === 'page') {
+ \Drupal::logger("myFooter")->notice("Success Again");
+        // Modify footer content for Basic Pages only.
+         // Ensure correct content structure for block rendering
+        $variables['content'] = [
+          '#type' => 'markup',
+          '#markup' => '<p>Custom footer content for Basic Pages</p>',
+          '#allowed_tags' => ['p', 'br', 'strong'], // Add allowed tags for security
+        ];
+      }
+    }
+  }
+
+
+   // Add a custom CSS class
+    if (isset($variables['attributes'])) {
+      $variables['attributes']['class'][] = 'cd';
+    }
+ 
+    // Attach CSS library for styling
+    $variables['#attached']['library'][] = 'myTheme/global-styling';
+}
+
+/**
+* Implements hook_preprocess_block(). for block__footer.html.twig
+*/
+
+function myTheme_preprocess_block__footer(&$variables){
+  $user=\Drupal::currentUser();
+  $variables['classNew']="I am added correctly";
+}
+
+
+
+/**
+* Implements hook_theme_suggestions_HOOK_alter(). for block__footer.html.twig
+*/
+
+function myTheme_theme_suggestions_node_alter(array &$suggestions, array &$variables){
+$suggestions[]="MyName_test";
+}
+
+?>
