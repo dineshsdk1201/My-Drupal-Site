@@ -1,0 +1,3 @@
+my custom permission for show recipe route:
+  title: "show recipes with passing data through url"
+  description: "to restrict recipe/show/{parameter} route"

@@ -1,0 +1,7 @@
+name: 'Custom Module'
+type: module
+description: 'A custom module to create a new content type called ArticleNew.'
+core_version_requirement: ^8 || ^9 || ^10
+package: Custom
+dependencies:
+  - node

@@ -1,0 +1,53 @@
+<?php
+/**
+* Implements hook_theme().
+*/
+function myblock_theme() {
+    return [
+        'dynamic_content_block' => [
+            'variables' => [
+                'title' => '',
+                'description' => '',
+                'image_url' => '',
+            ],
+            'template' => 'dynamic-content-block',
+        ],
+        'text_block' => [
+            'variables' => [
+                'description' => '',
+            ],
+            'template' => 'text-block',
+        ],
+        'new_block' => [
+            'variables' => [
+                'data' => '',
+            ],
+            'template' => 'new-block',
+        ],
+    ];
+}
+
+
+
+/**
+* Implements hook_preprocess_HOOK() for blocks.
+*/
+function myblock_preprocess_block(array &$variables) {
+\Drupal::logger('myblock')->notice("Block Plugin Id is :" . $variables['plugin_id']);
+  // Check if this is your custom block
+  if ($variables['plugin_id'] === 'myblock' || $variables['plugin_id']==='myblock::myblock') {
+    // Add a custom variable
+    $variables['custom_message'] = 'This is my custom block content!';
+  }
+
+  // Add a custom CSS class
+    if (isset($variables['attributes'])) {
+      $variables['attributes']['class'][] = 'tc';
+    }
+ 
+    // Attach CSS library for styling
+    $variables['#attached']['library'][] = 'module_recipes/newblock-styling';
+ 
+}
+
+?>

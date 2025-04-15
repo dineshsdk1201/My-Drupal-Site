@@ -1,0 +1,76 @@
+# module_recipes.recipesList:
+#   path: /rec
+#   defaults:
+#     _controller: 'Drupal\module_recipes\Controller\RecipesController::RecipesList'
+#     _title: "My Favourite Recipes"
+#   requirements:
+#     _permission: "access contents"
+
+module_recipes.RecipesList:
+  path: '/rec'
+  defaults:
+    _controller: 'Drupal\module_recipes\Controller\RecipesController::RecipesList'
+    _title: 'My Favourite Recipes'
+  requirements:     
+    _permission: 'access content'
+
+module_recipes.Aboutus:
+  path: '/aboutus'
+  defaults:
+    _controller: 'Drupal\module_recipes\Controller\RecipesController::AboutUS'
+    _title: 'About Us'
+  requirements:     
+    _permission: 'access content'
+
+module_recipes.log_example:
+  path: '/log-example'
+  defaults:
+    _controller: '\Drupal\module_recipes\Controller\RecipesController::logExample'
+    _title: 'Log Example'
+  requirements:
+    _permission: 'access content'
+
+
+
+module_recipes.show_recipe:
+  path: '/recipes/show/{recipeName}'
+  defaults:
+    _controller: 'Drupal\module_recipes\Controller\RecipesController::showRecipe'
+    _title: 'Recipe Details'
+  requirements:
+    _permission: 'my custom permission for show recipe route'
+
+module_recipes.show_message:
+  path: '/recipes'
+  defaults:
+    _controller: 'Drupal\module_recipes\Controller\RecipesController::showMessage'
+    _title: 'Message'
+  requirements:
+    _permission: 'access content'
+
+
+module_recipes.prepare:
+  path: '/prepare/{recipe}'
+  defaults:
+    _controller: '\Drupal\module_recipes\Controller\RecipesController::Prepare'
+    _title: 'Recipe Prepare'
+  requirements:
+    _permission: 'access content'
+
+
+# module_recipes.prepare:
+#   path: '/prepare'
+#   defaults:
+#     _controller: '\Drupal\module_recipes\Controller\RecipesController::Prepare'
+#     _title: 'Recipe Prepare'
+#   requirements:
+#     _permission: 'access content'
+
+
+module_recipes.form:
+  path: '/myform'
+  defaults:
+    _form: '\Drupal\module_recipes\Plugin\Form\MyForm'
+    _title: 'Custom Form Plugin'
+  requirements:
+    _permission: 'access content'

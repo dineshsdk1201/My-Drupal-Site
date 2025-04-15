@@ -1,0 +1,16 @@
+services:
+  module_recipes.my_custom_service:
+    class: Drupal\module_recipes\Service\MyCustomService
+
+  module_recipes.my_welcome_service:
+    class: Drupal\module_recipes\Service\WelcomeService
+
+  module_recipes.prepare_ingredients:
+    class: Drupal\module_recipes\Service\PrepareIngredients
+    arguments: ["@current_user","@date.formatter"]
+
+  module_recipes.my_chef_service:
+    class: Drupal\module_recipes\Service\RecipeService
+    arguments: ['@module_recipes.prepare_ingredients']
+
+
