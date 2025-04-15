@@ -1,0 +1,23 @@
+# module_recipes.recipesList:
+#   path: /rec
+#   defaults:
+#     _controller: 'Drupal\module_recipes\Controller\RecipesController::RecipesList'
+#     _title: "My Favourite Recipes"
+#   requirements:
+#     _permission: "access contents"
+
+module_recipes.RecipesList:
+  path: '/rec'
+  defaults:
+    _controller: 'Drupal\module_recipes\Controller\RecipesController::RecipesList'
+    _title: 'My Favourite Recipes'
+  requirements:     
+    _permission: 'access contents'
+
+# module_recipes.example:
+#   path: '/example'
+#   defaults:
+#     _controller: '\Drupal\module_recipes\Controller\RecipesController::RecipesList'
+#     _title: 'Hello World'
+#   requirements:
+#     _permission: 'access content'
