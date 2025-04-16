@@ -1,0 +1,4 @@
+services:
+  module_recipes_my_service:
+    class: Drupal\module_recipes\Service\MyService;
+  
