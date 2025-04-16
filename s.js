@@ -1,3 +1,3 @@
-function dff(){
+function dffNew(){
     return "From outside";
 }
